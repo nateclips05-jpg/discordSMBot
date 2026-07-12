@@ -437,18 +437,18 @@ async def on_ready() -> None:
     active_streams = await check_all_socials()
 
     if not active_streams:
-        #print("No configured social accounts are live.")
-        active_streams.append(
-        {
-            "platform": "TikTok",
-            "emoji": "🎵",
-            "url": f"https://www.tiktok.com/@{TIKTOK_USERNAME}/live",
-            "title": "",
-            "thumbnail": TIKTOK_THUMBNAIL_URL.strip(),
-        }
-    )
+        print("No configured social accounts are live.")
+    #     active_streams.append(
+    #     {
+    #         "platform": "TikTok",
+    #         "emoji": "🎵",
+    #         "url": f"https://www.tiktok.com/@{TIKTOK_USERNAME}/live",
+    #         "title": "",
+    #         "thumbnail": TIKTOK_THUMBNAIL_URL.strip(),
+    #     }
+    # )
         
-        #return
+        return
 
     posted = await post_live_announcement(
         active_streams
